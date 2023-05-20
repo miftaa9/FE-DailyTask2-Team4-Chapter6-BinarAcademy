@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import ColorSchemesExample from './components/Navbar/navbar';
+import Navbarini from './components/Navbar/navbar';
 
 
 function App() {
   return (
     <div className="App">
-      <ColorSchemesExample></ColorSchemesExample>
+      <Navbarini></Navbarini>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
