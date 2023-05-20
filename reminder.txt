@@ -5,8 +5,19 @@ Konfigure bootstrap
 jangan lupa import di index.js (root)
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import componen yang dibutuhkan diluar bootstrap
+import Button from 'react-bootstrap/Button'
 
+rm -r node_modules untuk remove node nodules
+use (git pull) untuk pull file yg di change temen
 
+To do Front End (Dl 21.30) :
+App.js + Aboutus (bebas html atau js) + navbar.js > 3
+1. rafli
+2. endang
+3. riza
 
-To do Riza :
-FE 
+Listproduct.js + modal > 3 orang
+1. huda
+2. yana
+3. mifta
