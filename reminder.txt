@@ -1,0 +1,12 @@
+Bootstrap install in terminal
+npm install react-bootstrap bootstrap
+
+Konfigure bootstrap
+jangan lupa import di index.js (root)
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+
+To do Riza :
+FE 
