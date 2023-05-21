@@ -8,9 +8,12 @@ function App() {
   return (
     <div className="App">
       <ColorSchemesExample />
-      <Example />
+      <div className='example'>
+        <Example />
+      </div>
       <KitchenSinkExample />
-      <NewExpense />
+      <NewExpense /> 
+      {/* <Footer/> */}
     </div>
   );
 }
