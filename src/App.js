@@ -3,6 +3,8 @@ import ColorSchemesExample from './components/Navbar/navbar';
 import KitchenSinkExample from './components/Cards/cards'
 import Example from './components/Modal/addproduct';
 import NewExpense from './components/NewExpense/NewExpense';
+// import AboutUs from './components/AbousUs/about-us';
+import Amount from './components/AbousUs/pp'
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       </div>
       <KitchenSinkExample />
       <NewExpense /> 
+      {/* <AboutUs></AboutUs> */}
+      <Amount></Amount>
       {/* <Footer/> */}
     </div>
   );
