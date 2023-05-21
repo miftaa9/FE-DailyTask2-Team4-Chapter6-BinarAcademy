@@ -2,23 +2,21 @@ import './App.css';
 import ColorSchemesExample from './components/Navbar/navbar';
 import BasicExample from './components/Cards/cards'
 import Example from './components/Modal/addproduct';
-import BootstrapCarousel from './components/Carousel/BootstrapCarousel';
-import AboutUs from './components/AbousUs/about-us'
-import Search from './components/Search/search'
 import Footer from './components/Footer/footer';
+import Carousell from './components/Carousel/carousel';
 
 function App() {
   return (
     <div className="App">
-      <ColorSchemesExample/>
-      <BootstrapCarousel/>
-      <Search />
+      <Carousell/>
+      <Login/>
+      <ColorSchemesExample />
+      <BasicExample/>
       <div className='example'>
         <Example /> 
       </div> 
       <BasicExample />
       <AboutUs/>
-      <Footer/>      
     </div>
   );
 }
