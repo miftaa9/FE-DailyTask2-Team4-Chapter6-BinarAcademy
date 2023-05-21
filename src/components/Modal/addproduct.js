@@ -14,12 +14,16 @@ const Example = (props) => {
   const [Category, setCategory] = useState('');
   const [Title, setTitle] = useState('');
   const [Price, setPrice] = useState('');
+  const [Color, setColor] = useState('');
+  const [Size, setSize] = useState('');
   const [Stock, setStock] = useState('');
   const [File, setEnteredFile] = useState('');
   const [userInput, setUserInput] = useState({
     Category: '',
     Title: '',
     Price: '',
+    Color: '',
+    Size: '',
     Stock:'',
     enteredFile:'',
   });
@@ -85,6 +89,8 @@ const Example = (props) => {
       category: Category,
       title: Title,
       price: Price,
+      color: Color,
+      size: Size,
       stock: Stock,
       file: File,
     };
@@ -93,6 +99,8 @@ const Example = (props) => {
     setCategory('');
     setTitle('');
     setPrice('');
+    setColor('');
+    setSize('');
     setStock('');
     setEnteredFile('');
   };
@@ -127,10 +135,14 @@ const Example = (props) => {
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
               <Form.Label type='text' value={Title} onChange={titleHandler}>Nama Produk</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Nama & Detail Pakaian" autoFocus />
+              <Form.Control className="mb-3" placeholder="Masukkan Nama Pakaian" autoFocus />
               <Form.Label type='number' min='0.01' step='0.01' value={Price} onChange={priceHandler}>Harga</Form.Label>
               <Form.Control className="mb-3" placeholder="Masukkan Harga Pakaian" />
-              <Form.Label type='text' value={Stock} onChange={stockHandler}>Stock</Form.Label>
+              <Form.Label type='text' value={Color} onChange={stockHandler}>Warna</Form.Label>
+              <Form.Control className="mb-3" placeholder="Masukkan Warna Pakaian" />
+              <Form.Label type='text' value={Size} onChange={stockHandler}>Ukuran</Form.Label>
+              <Form.Control className="mb-3" placeholder="Masukkan Ukuran Pakaian" />
+              <Form.Label type='text' value={Stock} onChange={stockHandler}>Sisa Stock</Form.Label>
               <Form.Control className="mb-3" placeholder="Masukkan Jumlah Stock Pakaian" />
               <Form.Label>Gambar</Form.Label>
               <div>
