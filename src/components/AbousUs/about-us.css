@@ -1,0 +1,92 @@
+body{
+    background: #FFFFFF;
+}
+
+.card:hover{
+    box-shadow:5px 10px 20px 1px rgba(0,0,0,0.253)!important;
+}
+.card-body{
+    padding: 3rem 0 !important;
+}
+
+.card-text{
+    font-size:0.9rem;
+    padding: 0.4rem 1.9rem;
+}
+
+.row{
+    padding-top: 2rem;
+    margin:auto;
+    max-width: 75rem;
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+.card-img-top{
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
+
+.card-img-top:hover{
+    transform: scale(1.8);
+}
+
+.center-1{
+    text-align: center;
+    padding: 0.5rem;
+    clear:left;
+}
+.shorten-hr{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.col-md-4{
+    margin: auto;
+    padding: 1rem;
+}
+
+.p-inline{
+    margin:auto;
+    padding-right: 6rem;
+    padding-bottom: 1rem;
+    text-align: left;
+    max-width: 100rem;
+}
+
+.img-left{
+    float: left;
+    margin-right: 5rem;
+    margin-left: 15rem;
+}
+
+.padding-top{
+    margin-left: 15rem;
+    padding-top: 8rem;
+}
+
+.text-align{
+    text-align: center;
+    padding-right: 45rem;
+    padding-left: 45rem;
+}
+
+.button-color{
+    color: #3D8CA6;
+    margin: auto;
+}
+
+.button-align{
+    text-align: center;
+}
+
+.button-padding{
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button-padding-1{
+    margin-bottom: 1rem;
+}
