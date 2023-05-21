@@ -10,8 +10,7 @@ function Navbarini() {
     <>
       <Navbar bg="primary" variant="dark">
         <Container>
-<<<<<<< HEAD
-          <Navbar.Brand href="#home"><img className="col-md-auto p-0" src="images/logo.png" alt /></Navbar.Brand>
+          <Navbar.Brand href="#home"><img className="col-md-auto p-0" src="images/logo.png" alt="" /></Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#pricing">Home</Nav.Link>
             <DropdownButton id="dropdown-basic-button" title="List Product">
@@ -19,17 +18,8 @@ function Navbarini() {
                 <Dropdown.Item href="#/action-2">Celana</Dropdown.Item>
             </DropdownButton>
             <Nav.Link href="#pricing">About Us</Nav.Link>
-=======
-          <Navbar.Brand href="#home">Logooooo</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Produk</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
->>>>>>> a992131489073744f5b76c1d0d3ad540d984ee39
           </Nav>
          </Container>
-        
-         
       </Navbar>
     </>
   );
