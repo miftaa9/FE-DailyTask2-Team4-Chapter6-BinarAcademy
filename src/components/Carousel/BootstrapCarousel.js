@@ -1,7 +1,7 @@
 import React from 'react'
 import caro1 from './caro1.webp'
 import caro2 from './caro2.webp'
-import caro3 from './Background.jpg'
+import caro3 from './caro3.webp'
 import Carousel from 'react-bootstrap/Carousel';
 
 function BootstrapCarousel() {
