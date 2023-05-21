@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "./ui.css";
+import "./about-us.css";
 const Card = props => {
     return(
         <div className="card text-center shadow">
