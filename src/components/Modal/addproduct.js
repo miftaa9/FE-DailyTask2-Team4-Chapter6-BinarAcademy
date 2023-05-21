@@ -5,12 +5,97 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
-function Example() {
+
+const Example = (props) => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => setShow(true);  
 
+  const [Category, setCategory] = useState('');
+  const [Title, setTitle] = useState('');
+  const [Price, setPrice] = useState('');
+  const [Stock, setStock] = useState('');
+  const [File, setEnteredFile] = useState('');
+  const [userInput, setUserInput] = useState({
+    Category: '',
+    Title: '',
+    Price: '',
+    Stock:'',
+    enteredFile:'',
+  });
+
+  const categoryHandler = (event) => {
+    setCategory(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredTitle: event.target.value,
+    });
+    setUserInput((prevState) => {
+      return { ...prevState, enteredTitle: event.target.value };
+    });
+  };
+
+  const titleHandler = (event) => {
+    setTitle(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredAmount: event.target.value,
+    });
+  };
+
+  const priceHandler = (event) => {
+    setPrice(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredDate: event.target.value,
+    });
+  };
+
+  const stockHandler = (event) => {
+    setStock(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredTotal: event.target.value,
+    });
+  };
+
+  const [file, setFile] = useState();
+
+  const handleFile = (e) => {
+    setEnteredFile(e.target.value);
+    setUserInput({
+      ...userInput,
+      enteredFile: e.target.value,
+    });
+    if (e.target.files) {
+      setFile(e.target.files[0]);
+    }
+  };
+
+  const handleUploadClick = () => {
+    if (!file) {
+      return;
+    }
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const expenseData = {
+      category: Category,
+      title: Title,
+      price: Price,
+      stock: Stock,
+      file: File,
+    };
+
+    props.onSaveExpenseData(expenseData);
+    setCategory('');
+    setTitle('');
+    setPrice('');
+    setStock('');
+    setEnteredFile('');
+  };
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -22,7 +107,7 @@ function Example() {
           <Modal.Title>Masukkan Produk</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onClick={submitHandler}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               {/* <Form.Label>Kategori</Form.Label> */}
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -31,6 +116,9 @@ function Example() {
                   className="ms-auto mx-2"
                   aria-label="Default select example"
                   required
+                  type='text' 
+                  value={Category} 
+                  onChange={categoryHandler}
                 >
                   <option>Pilih Kategori</option>
                   <option href="#/baju">Baju</option>
@@ -38,24 +126,16 @@ function Example() {
                 </Form.Select>
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
-              {/* <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                  Pilih Kategori
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/baju">Baju</Dropdown.Item>
-                  <Dropdown.Item href="#/celana">Celana</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown> */}
-              <Form.Label>Nama Produk</Form.Label>
+              <Form.Label type='text' value={Title} onChange={titleHandler}>Nama Produk</Form.Label>
               <Form.Control className="mb-3" placeholder="Masukkan Nama & Detail Pakaian" autoFocus />
-              <Form.Label>Harga</Form.Label>
+              <Form.Label type='number' min='0.01' step='0.01' value={Price} onChange={priceHandler}>Harga</Form.Label>
               <Form.Control className="mb-3" placeholder="Masukkan Harga Pakaian" />
-              <Form.Label>Stock</Form.Label>
+              <Form.Label type='text' value={Stock} onChange={stockHandler}>Stock</Form.Label>
               <Form.Control className="mb-3" placeholder="Masukkan Jumlah Stock Pakaian" />
-              <Form.Label>Gambar</Form.Label>
-              <Form.Control />
+              <div className='new-expense__control'>
+                <input type="file" onChange={handleFile} />
+                <div>{file && `${file.name} - ${file.type}`}</div>
+              </div>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -63,7 +143,7 @@ function Example() {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={() => {handleClose(); handleUploadClick();}}>
             Add
           </Button>
         </Modal.Footer>
