@@ -19,7 +19,7 @@ function Footer() {
             </div>
             <div className="col pr-5 mb-3">
                 <p>Connect with us</p>
-                <div className="d-flex">
+                <div className="logo d-flex">
                     <a href><img className="mr-3" src="images/icon_facebook.svg" alt="" /></a>
                     <a href><img className="mr-3" src="images/icon_instagram.svg" alt="" /></a>
                     <a href><img className="mr-3" src="images/icon_twitter.svg" alt="" /></a>
