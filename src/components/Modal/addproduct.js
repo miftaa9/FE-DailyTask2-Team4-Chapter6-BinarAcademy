@@ -1,10 +1,9 @@
-import { render } from 'react-dom';
-import Dropdown from 'react-bootstrap/Dropdown';
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
-
+import { render } from "react-dom";
+import Dropdown from "react-bootstrap/Dropdown";
+import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
 
 function Example() {
   const [show, setShow] = useState(false);
@@ -25,8 +24,21 @@ function Example() {
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Kategori</Form.Label>
-              <Dropdown>
+              {/* <Form.Label>Kategori</Form.Label> */}
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Kategori</Form.Label>
+                <Form.Select
+                  className="ms-auto mx-2"
+                  aria-label="Default select example"
+                  required
+                >
+                  <option>Pilih Kategori</option>
+                  <option href="#/baju">Baju</option>
+                  <option href="#/celana">Celana</option>
+                </Form.Select>
+                <Form.Text className="text-muted"></Form.Text>
+              </Form.Group>
+              {/* <Dropdown>
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                   Pilih Kategori
                 </Dropdown.Toggle>
@@ -35,19 +47,15 @@ function Example() {
                   <Dropdown.Item href="#/baju">Baju</Dropdown.Item>
                   <Dropdown.Item href="#/celana">Celana</Dropdown.Item>
                 </Dropdown.Menu>
-              </Dropdown>
+              </Dropdown> */}
               <Form.Label>Nama Produk</Form.Label>
-              <Form.Control
-                placeholder="Kemeja Putih"
-                autoFocus
-              />
+              <Form.Control className="mb-3" placeholder="Masukkan Nama & Detail Pakaian" autoFocus />
               <Form.Label>Harga</Form.Label>
-              <Form.Control placeholder="Rp.0" />
+              <Form.Control className="mb-3" placeholder="Masukkan Harga Pakaian" />
               <Form.Label>Stock</Form.Label>
-              <Form.Control placeholder="99" />
+              <Form.Control className="mb-3" placeholder="Masukkan Jumlah Stock Pakaian" />
               <Form.Label>Gambar</Form.Label>
-              <Form.Control
-              />
+              <Form.Control />
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -64,7 +72,7 @@ function Example() {
   );
 }
 
-const targetContainer = document.getElementById('root');
+const targetContainer = document.getElementById("root");
 render(<Example />, targetContainer);
 
 export default Example;
