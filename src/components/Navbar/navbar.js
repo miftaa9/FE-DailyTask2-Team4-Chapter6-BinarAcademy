@@ -16,7 +16,7 @@ function Navbarini() {
                 <Dropdown.Item href="#/pakaian">Baju</Dropdown.Item>
                 <Dropdown.Item href="#/celana">Celana</Dropdown.Item>
             </DropdownButton>
-            <Nav.Link href="#footer">About Us</Nav.Link>
+            <Nav.Link href="#about-us">About Us</Nav.Link>
           </Nav>
          </Container>
       </Navbar>

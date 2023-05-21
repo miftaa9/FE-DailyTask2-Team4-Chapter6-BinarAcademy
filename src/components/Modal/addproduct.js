@@ -132,7 +132,8 @@ const Example = (props) => {
               <Form.Control className="mb-3" placeholder="Masukkan Harga Pakaian" />
               <Form.Label type='text' value={Stock} onChange={stockHandler}>Stock</Form.Label>
               <Form.Control className="mb-3" placeholder="Masukkan Jumlah Stock Pakaian" />
-              <div className='new-expense__control'>
+              <Form.Label>Gambar</Form.Label>
+              <div>
                 <input type="file" onChange={handleFile} />
                 <div>{file && `${file.name} - ${file.type}`}</div>
               </div>
