@@ -1,12 +1,14 @@
+import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 
-function Carousell() {
+function BootstrapCarousel() {
   return (
-    <Carousel>
-      <Carousel.Item>
+    <div>
+      <Carousel>
+        <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
+          src="./Background.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -17,7 +19,7 @@ function Carousell() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
           alt="Second slide"
         />
 
@@ -29,7 +31,7 @@ function Carousell() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
+          src="https://static.vecteezy.com/system/resources/thumbnails/008/174/590/small/fashion-advertising-web-banner-illustration-vector.jpg"
           alt="Third slide"
         />
 
@@ -41,7 +43,8 @@ function Carousell() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-  );
+    </div>
+  )
 }
 
-export default Carousell;
+export default BootstrapCarousel;
