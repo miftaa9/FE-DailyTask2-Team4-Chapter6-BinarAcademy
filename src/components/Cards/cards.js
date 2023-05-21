@@ -17,6 +17,7 @@ function BasicExample() {
           <h6>Rp. 100.000</h6>
         </Card.Text>
         <div className='button'>
+        <Button variant="success">Detail</Button>
         <Button style={{margin:'7px'}} variant="warning">Update</Button>
         <Button variant="danger">Delete</Button>
         </div>

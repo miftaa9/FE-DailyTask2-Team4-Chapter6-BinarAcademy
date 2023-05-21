@@ -6,6 +6,7 @@ import Footer from './components/Footer/footer';
 // import Login from './components/Login/login';
 import AboutUs from './components/AbousUs/about-us'
 import Carousell from './components/Carousel/BootstrapCarousel';
+import Detail from './components/Detail/detail';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Example /> 
       </div> 
       <BasicExample />
+      <Detail/>
       <AboutUs/>
       <Footer/>
     </div>
