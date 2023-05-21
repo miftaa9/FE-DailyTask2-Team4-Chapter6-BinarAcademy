@@ -17,19 +17,19 @@ class Cards extends Component {
                             <Card title = "Hudaaaaaaaaaa" p = "Web Development"/>
                         </div>
                         <div className="col-md-4">
-                            <Card title = "Rafliiiiiiiiiiii" p = "Marketing"/>
+                            <Card title = "Rafli Mardhian" p = "Marketing"/>
                         </div>
                         <div className="col-md-4">
-                            <Card title = "Endangggggggggg" p = "Public Relations"/>
+                            <Card title = "Endang Hendayatna" p = "Public Relations"/>
                         </div>
                         <div className="col-md-4">
-                            <Card title = "Yanaaaaaaaaa" p = "Public Relations"/>
+                            <Card title = "Yana Wahyu Indra Pramugari" p = "Public Relations"/>
                         </div>
                         <div className="col-md-4">
-                            <Card title = "Miftaaaaaaaaaa" p = "Web Development"/>
+                            <Card title = "Miftakhul Ulum Khasanah" p = "Web Development"/>
                         </div>
                         <div className="col-md-4">
-                            <Card title = "Rizaaaaaaaaaa" p = "Web Development"/>
+                            <Card title = "Rizatul Mas'ulah" p = "Web Development"/>
                         </div>
                     </div>
                 </div>
