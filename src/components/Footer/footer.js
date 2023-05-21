@@ -10,12 +10,12 @@ function Footer() {
                 <p>081-233-334-808</p>
             </div>
             <div className="col pr-5 d-flex flex-column">
-                <a className="mb-3 font-weight-bold" href="huda">1. M Huda</a>
-                <a className="mb-3 font-weight-bold" href="#why-us">2. Rafli</a>
-                <a className="mb-3 font-weight-bold" href="#testimonial">3. Yana</a>
-                <a className="mb-3 font-weight-bold" href="#faq">4. Endang</a>
-                <a className="mb-3 font-weight-bold" href="#faq">4. Mifta</a>
-                <a className="mb-3 font-weight-bold" href="#faq">4. Riza</a>
+                <a className="mb-3 font-weight-bold" href="https://github.com/miftaaaaaa/FE-DailyTask2-Team4-Chapter6-BinarAcademy/commits/main">M Huda</a>
+                <a className="mb-3 font-weight-bold" href="#why-us">Rafli</a>
+                <a className="mb-3 font-weight-bold" href="#testimonial">Yana</a>
+                <a className="mb-3 font-weight-bold" href="#faq">Endang</a>
+                <a className="mb-3 font-weight-bold" href="#faq">Mifta</a>
+                <a className="mb-3 font-weight-bold" href="#faq">Riza</a>
             </div>
             <div className="col pr-5 mb-3">
                 <p>Connect with us</p>

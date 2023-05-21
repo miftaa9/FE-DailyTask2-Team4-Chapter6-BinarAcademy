@@ -6,13 +6,11 @@ class Cards extends Component {
     render (){
         return(
             <div>
-                <br/>
-                <img className="img-left" src = {image4}/>
-                <br/>
-                <h1 className="padding-top">About Us</h1>
+                <img className="img-center" src = {image4}/>
+                <h1 className="padding-top" style={{marginRight: '270px'}}>About Us</h1>
                 <hr className = "shorten-hr"/>
                 <div>
-                    <div className="row">
+                    <div  id='about-us' className="row" style={{marginLeft: '120px'}}>
                         <div className="col-md-4">
                             <Card title = "Hudaaaaaaaaaa" p = "Web Development"/>
                         </div>

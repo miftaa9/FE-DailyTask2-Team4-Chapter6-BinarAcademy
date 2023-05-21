@@ -1,4 +1,7 @@
 import React from 'react'
+import caro1 from './caro1.webp'
+import caro2 from './caro2.webp'
+import caro3 from './Background.jpg'
 import Carousel from 'react-bootstrap/Carousel';
 
 function BootstrapCarousel() {
@@ -8,14 +11,14 @@ function BootstrapCarousel() {
         <Carousel.Item>
         <img
           className="d-block w-100"
-          src="./Background.jpg"
+          src={caro1}
           alt="First slide"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+          src={caro2}
           alt="Second slide"
         />
 
@@ -23,7 +26,7 @@ function BootstrapCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://static.vecteezy.com/system/resources/thumbnails/008/174/590/small/fashion-advertising-web-banner-illustration-vector.jpg"
+          src={caro3}
           alt="Third slide"
         />
       </Carousel.Item>
