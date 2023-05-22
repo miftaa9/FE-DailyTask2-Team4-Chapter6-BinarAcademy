@@ -28,7 +28,6 @@ function BasicExample() {
           <h6>Rp. 100.000</h6>
         </Card.Text>
         <div className='button'>
-        {/* <Button variant="success">Detail</Button> */}
         <div>
           {isPopupOpen ? (
             <Popup onClose={handleClosePopup} />

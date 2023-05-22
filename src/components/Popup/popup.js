@@ -6,7 +6,7 @@ const Popup = ({ onClose }) => {
       <div className="popup-content">
         <p>Tipe : Jeans</p>
         <p>Warna : Biru</p>
-        <button onClick={onClose}>Close</button>
+        <button onClick={onClose}>Closee</button>
       </div>
     </div>
   );
