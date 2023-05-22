@@ -9,6 +9,7 @@ import Carousell from './components/Carousel/BootstrapCarousel';
 import Detail from './components/Detail/detail';
 
 function App() {
+
   return (
     <div className="App">
       <Carousell/>
@@ -22,6 +23,7 @@ function App() {
       <AboutUs/>
       <Footer/>
     </div>
+    
   );
 }
 

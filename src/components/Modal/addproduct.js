@@ -4,7 +4,6 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
-
 const Example = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
