@@ -103,6 +103,22 @@ const Detail = (props) => {
     setStock('');
     setEnteredFile('');
   };
+
+  // Add API method to get data from backend
+  const getDataFromBackend = () => {
+    fetch('localhost:4000/api/v1/product/${id}')
+      .then(response => response.json())
+      .then(data => {
+        setCategory(data.category);
+        setTitle(data.title);
+        setPrice(data.price);
+        setColor(data.color);
+        setSize(data.size);
+        setStock(data.stock);
+        setEnteredFile(data.file);
+      })
+      .catch(error => console.log(error));
+  };
   return (
     <>
       <Button variant="success" onClick={handleShow}>
