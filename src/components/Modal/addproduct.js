@@ -4,27 +4,26 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
-
 const Example = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);  
+  const handleShow = () => setShow(true);
 
-  const [Category, setCategory] = useState('');
-  const [Title, setTitle] = useState('');
-  const [Price, setPrice] = useState('');
-  const [Color, setColor] = useState('');
-  const [Size, setSize] = useState('');
-  const [Stock, setStock] = useState('');
-  const [File, setEnteredFile] = useState('');
+  const [Category, setCategory] = useState("");
+  const [Title, setTitle] = useState("");
+  const [Price, setPrice] = useState("");
+  const [Color, setColor] = useState("");
+  const [Size, setSize] = useState("");
+  const [Stock, setStock] = useState("");
+  const [File, setEnteredFile] = useState("");
   const [userInput, setUserInput] = useState({
-    Category: '',
-    Title: '',
-    Price: '',
-    Color: '',
-    Size: '',
-    Stock:'',
-    enteredFile:'',
+    Category: "",
+    Title: "",
+    Price: "",
+    Color: "",
+    Size: "",
+    Stock: "",
+    enteredFile: "",
   });
 
   const categoryHandler = (event) => {
@@ -95,13 +94,13 @@ const Example = (props) => {
     };
 
     props.onSaveExpenseData(expenseData);
-    setCategory('');
-    setTitle('');
-    setPrice('');
-    setColor('');
-    setSize('');
-    setStock('');
-    setEnteredFile('');
+    setCategory("");
+    setTitle("");
+    setPrice("");
+    setColor("");
+    setSize("");
+    setStock("");
+    setEnteredFile("");
   };
   return (
     <>
@@ -123,8 +122,8 @@ const Example = (props) => {
                   className="ms-auto mx-2"
                   aria-label="Default select example"
                   required
-                  type='text' 
-                  value={Category} 
+                  type="text"
+                  value={Category}
                   onChange={categoryHandler}
                 >
                   <option>Pilih Kategori</option>
@@ -133,16 +132,48 @@ const Example = (props) => {
                 </Form.Select>
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
-              <Form.Label type='text' value={Title} onChange={titleHandler}>Nama Produk</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Nama Pakaian" autoFocus />
-              <Form.Label type='number' min='0.01' step='0.01' value={Price} onChange={priceHandler}>Harga</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Harga Pakaian" />
-              <Form.Label type='text' value={Color} onChange={stockHandler}>Warna</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Warna Pakaian" />
-              <Form.Label type='text' value={Size} onChange={stockHandler}>Ukuran</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Ukuran Pakaian" />
-              <Form.Label type='text' value={Stock} onChange={stockHandler}>Sisa Stock</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Jumlah Stock Pakaian" />
+              <Form.Label type="text" value={Title} onChange={titleHandler}>
+                Nama Produk
+              </Form.Label>
+              <Form.Control
+                className="mb-3"
+                placeholder="Masukkan Nama Pakaian"
+                autoFocus
+              />
+              <Form.Label
+                type="number"
+                min="0.01"
+                step="0.01"
+                value={Price}
+                onChange={priceHandler}
+              >
+                Harga
+              </Form.Label>
+              <Form.Control
+                className="mb-3"
+                placeholder="Masukkan Harga Pakaian"
+              />
+              <Form.Label type="text" value={Color} onChange={stockHandler}>
+                Warna
+              </Form.Label>
+              <Form.Control
+                className="mb-3"
+                placeholder="Masukkan Warna Pakaian"
+              />
+              <Form.Label type="text" value={Size} onChange={stockHandler}>
+                Ukuran
+              </Form.Label>
+              <Form.Control
+                className="mb-3"
+                placeholder="Masukkan Ukuran Pakaian"
+              />
+              <Form.Label type="text" value={Stock} onChange={stockHandler}>
+                Sisa Stock
+              </Form.Label>
+              <Form.Control
+                className="mb-3"
+                placeholder="Masukkan Jumlah Stock Pakaian"
+              />
               <Form.Label>Gambar</Form.Label>
               <div>
                 <input type="file" onChange={handleFile} />
@@ -155,14 +186,20 @@ const Example = (props) => {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={() => {handleClose(); handleUploadClick();}}>
+          <Button
+            variant="primary"
+            onClick={() => {
+              handleClose();
+              handleUploadClick();
+            }}
+          >
             Add
           </Button>
         </Modal.Footer>
       </Modal>
     </>
   );
-}
+};
 
 const targetContainer = document.getElementById("root");
 render(<Example />, targetContainer);
