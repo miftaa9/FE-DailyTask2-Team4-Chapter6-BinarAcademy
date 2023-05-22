@@ -80,9 +80,21 @@ const Example = (props) => {
     }
   };
 
+  const postData = async (url, data) => {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+  
+    return response.json();
+  };
+  
   const submitHandler = (event) => {
     event.preventDefault();
-
+  
     const expenseData = {
       category: Category,
       title: Title,
@@ -92,15 +104,22 @@ const Example = (props) => {
       stock: Stock,
       file: File,
     };
-
-    props.onSaveExpenseData(expenseData);
-    setCategory('');
-    setTitle('');
-    setPrice('');
-    setColor('');
-    setSize('');
-    setStock('');
-    setEnteredFile('');
+  
+    postData('localhost:4000/api/v1/product', expenseData)
+      .then((data) => {
+        console.log(data);
+        props.onSaveExpenseData(expenseData);
+        setCategory('');
+        setTitle('');
+        setPrice('');
+        setColor('');
+        setSize('');
+        setStock('');
+        setEnteredFile('');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
   return (
     <>
