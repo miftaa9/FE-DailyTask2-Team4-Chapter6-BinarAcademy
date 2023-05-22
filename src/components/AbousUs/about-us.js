@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import Card from "./about-us-ui";
-import image4 from "./image4.png";
 
 class Cards extends Component {
   render() {
     return (
       <div>
-        <img className="img-center" src={image4} />
         <div  id="about-us">
           <h1 className="padding-top" style={{ marginRight: "270px" }}>
             About Us

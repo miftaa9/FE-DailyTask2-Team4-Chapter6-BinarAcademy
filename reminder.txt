@@ -11,6 +11,10 @@ import Button from 'react-bootstrap/Button'
 rm -r node_modules untuk remove node nodules
 use (git pull) untuk pull file yg di change temen
 
+create product
+npm i redux
+npm i react-redux
+
 To do Front End (Dl 21.30) :
 App.js + Aboutus (bebas html atau js) + navbar.js > 3
 1. rafli

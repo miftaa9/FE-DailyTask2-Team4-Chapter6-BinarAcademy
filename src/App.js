@@ -10,6 +10,7 @@ import Carousell from './components/Carousel/BootstrapCarousel';
 import SearchComponent from './components/Search/search';
 
 function App() {
+
   return (
     <div className="App">
       <Carousell/>
@@ -24,6 +25,7 @@ function App() {
       <AboutUs/>
       <Footer/>
     </div>
+    
   );
 }
 
