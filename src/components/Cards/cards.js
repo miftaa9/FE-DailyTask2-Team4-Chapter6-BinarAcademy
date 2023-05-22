@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './card.css'
+import Detail from '../Modal/detail';
 
 function BasicExample() {
   return (
@@ -17,7 +18,8 @@ function BasicExample() {
           <h6>Rp. 100.000</h6>
         </Card.Text>
         <div className='button'>
-        <Button variant="success">Detail</Button>
+        <Detail/>
+        {/* <Button variant="success">Detail</Button> */}
         <Button style={{margin:'7px'}} variant="warning">Update</Button>
         <Button variant="danger">Delete</Button>
         </div>

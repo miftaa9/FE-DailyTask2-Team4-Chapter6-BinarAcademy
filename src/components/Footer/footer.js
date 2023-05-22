@@ -1,3 +1,4 @@
+import { blue } from '@mui/material/colors';
 import './footer.css'
 
 function Footer() {

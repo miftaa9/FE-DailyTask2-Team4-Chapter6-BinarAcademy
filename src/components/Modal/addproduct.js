@@ -111,7 +111,7 @@ const Example = (props) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Masukkan Produk</Modal.Title>
+          <Modal.Title>Tambah Produk</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onClick={submitHandler}>

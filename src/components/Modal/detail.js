@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
 
-const Example = (props) => {
+const Detail = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);  
@@ -105,58 +105,33 @@ const Example = (props) => {
   };
   return (
     <>
-      <Button onClick={handleShow}>
-        Tambah Produk
+      <Button variant="success" onClick={handleShow}>
+        Detail
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Masukkan Produk</Modal.Title>
+          <Modal.Title>Detail Produk</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onClick={submitHandler}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              {/* <Form.Label>Kategori</Form.Label> */}
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Kategori</Form.Label>
-                <Form.Select
-                  className="ms-auto mx-2"
-                  aria-label="Default select example"
-                  required
-                  type='text' 
-                  value={Category} 
-                  onChange={categoryHandler}
-                >
-                  <option>Pilih Kategori</option>
-                  <option href="#/baju">Baju</option>
-                  <option href="#/celana">Celana</option>
-                </Form.Select>
-                <Form.Text className="text-muted"></Form.Text>
-              </Form.Group>
-              <Form.Label type='text' value={Title} onChange={titleHandler}>Nama Produk</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Nama Pakaian" autoFocus />
-              <Form.Label type='number' min='0.01' step='0.01' value={Price} onChange={priceHandler}>Harga</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Harga Pakaian" />
-              <Form.Label type='text' value={Color} onChange={stockHandler}>Warna</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Warna Pakaian" />
-              <Form.Label type='text' value={Size} onChange={stockHandler}>Ukuran</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Ukuran Pakaian" />
-              <Form.Label type='text' value={Stock} onChange={stockHandler}>Sisa Stock</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Jumlah Stock Pakaian" />
-              <Form.Label>Gambar</Form.Label>
-              <div>
-                <input type="file" onChange={handleFile} />
-                <div>{file && `${file.name} - ${file.type}`}</div>
-              </div>
+              {/* <a variant="top" src="./jeans.webp" /> */}
+              <Form.Label type='text' value={Title} onChange={titleHandler}>Celana Jeans</Form.Label>
+              <br/>
+              <Form.Label type='number' min='0.01' step='0.01' value={Price} onChange={priceHandler}>Rp 79.000</Form.Label>
+              <br/>
+              <Form.Label type='text' value={Color} onChange={stockHandler}>Color: Dark Blue</Form.Label>
+              <br/>
+              <Form.Label type='text' value={Size} onChange={stockHandler}>Size: 3L</Form.Label>
+              <br/>
+              <Form.Label type='text' value={Stock} onChange={stockHandler}>Sisa Stock: 99</Form.Label>
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Cancel
-          </Button>
-          <Button variant="primary" onClick={() => {handleClose(); handleUploadClick();}}>
-            Add
+            Back
           </Button>
         </Modal.Footer>
       </Modal>
@@ -165,6 +140,6 @@ const Example = (props) => {
 }
 
 const targetContainer = document.getElementById("root");
-render(<Example />, targetContainer);
+render(<Detail />, targetContainer);
 
-export default Example;
+export default Detail;
