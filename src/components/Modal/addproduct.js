@@ -28,36 +28,58 @@ const Example = (props) => {
 
   const categoryHandler = (event) => {
     setCategory(event.target.value);
+    console.log('test');
     setUserInput({
       ...userInput,
-      enteredTitle: event.target.value,
+      enteredCategory: event.target.value,
     });
     setUserInput((prevState) => {
-      return { ...prevState, enteredTitle: event.target.value };
+      return { ...prevState, enteredCategory: event.target.value };
     });
   };
 
   const titleHandler = (event) => {
     setTitle(event.target.value);
+    console.log('test');
     setUserInput({
       ...userInput,
-      enteredAmount: event.target.value,
+      enteredTitle: event.target.value,
     });
   };
 
   const priceHandler = (event) => {
     setPrice(event.target.value);
+    console.log('test');
     setUserInput({
       ...userInput,
-      enteredDate: event.target.value,
+      enteredPrice: event.target.value,
+    });
+  };
+
+  const colorHandler = (event) => {
+    setColor(event.target.value);
+    console.log('test');
+    setUserInput({
+      ...userInput,
+      enteredColor: event.target.value,
+    });
+  };
+
+  const sizeHandler = (event) => {
+    setSize(event.target.value);
+    console.log('test');
+    setUserInput({
+      ...userInput,
+      enteredSize: event.target.value,
     });
   };
 
   const stockHandler = (event) => {
     setStock(event.target.value);
+    console.log('test');
     setUserInput({
       ...userInput,
-      enteredTotal: event.target.value,
+      enteredStock: event.target.value,
     });
   };
 
@@ -92,9 +114,8 @@ const Example = (props) => {
     return response.json();
   };
   
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-  
     const expenseData = {
       category: Category,
       title: Title,
@@ -102,25 +123,12 @@ const Example = (props) => {
       color: Color,
       size: Size,
       stock: Stock,
-      file: File,
+      // file: File,
     };
-  
-    postData('localhost:4000/api/v1/product', expenseData)
-      .then((data) => {
-        console.log(data);
-        props.onSaveExpenseData(expenseData);
-        setCategory('');
-        setTitle('');
-        setPrice('');
-        setColor('');
-        setSize('');
-        setStock('');
-        setEnteredFile('');
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    const response = await postData('http://localhost:4000/api/v1/products/', expenseData);
+    console.log(response);
   };
+  
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -132,7 +140,7 @@ const Example = (props) => {
           <Modal.Title>Tambah Produk</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onClick={submitHandler}>
+          <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               {/* <Form.Label>Kategori</Form.Label> */}
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -151,16 +159,16 @@ const Example = (props) => {
                 </Form.Select>
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
-              <Form.Label type='text' value={Title} onChange={titleHandler}>Nama Produk</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Nama Pakaian" autoFocus />
-              <Form.Label type='number' min='0.01' step='0.01' value={Price} onChange={priceHandler}>Harga</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Harga Pakaian" />
-              <Form.Label type='text' value={Color} onChange={stockHandler}>Warna</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Warna Pakaian" />
-              <Form.Label type='text' value={Size} onChange={stockHandler}>Ukuran</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Ukuran Pakaian" />
-              <Form.Label type='text' value={Stock} onChange={stockHandler}>Sisa Stock</Form.Label>
-              <Form.Control className="mb-3" placeholder="Masukkan Jumlah Stock Pakaian" />
+              <Form.Label type='text'>Nama Produk</Form.Label>
+              <Form.Control className="mb-3" value={Title} onChange={titleHandler} placeholder="Masukkan Nama Pakaian" autoFocus />
+              <Form.Label type='number' min='0.01' step='0.01'>Harga</Form.Label>
+              <Form.Control className="mb-3" value={Price} onChange={priceHandler} placeholder="Masukkan Harga Pakaian" />
+              <Form.Label type='text'>Warna</Form.Label>
+              <Form.Control className="mb-3" value={Color} onChange={colorHandler} placeholder="Masukkan Warna Pakaian" />
+              <Form.Label type='text'>Ukuran</Form.Label>
+              <Form.Control className="mb-3" value={Size} onChange={sizeHandler} placeholder="Masukkan Ukuran Pakaian" />
+              <Form.Label type='text'>Sisa Stock</Form.Label>
+              <Form.Control className="mb-3" value={Stock} onChange={stockHandler} placeholder="Masukkan Jumlah Stock Pakaian" />
               <Form.Label>Gambar</Form.Label>
               <div>
                 <input type="file" onChange={handleFile} />
@@ -173,7 +181,7 @@ const Example = (props) => {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={() => {handleClose(); handleUploadClick();}}>
+          <Button variant="primary" onClick={submitHandler}>
             Add
           </Button>
         </Modal.Footer>
